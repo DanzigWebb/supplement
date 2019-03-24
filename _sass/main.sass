@@ -34,6 +34,9 @@ h1, h2, h3, h4, h5, h6, .h-heading
 .heading--line
 	border-left: 5px solid $accent
 	padding-left: $gutter
+.heading--line-right
+	border-right: 5px solid $accent
+	padding-right: $gutter
 .title-1
 	font-size: 72px
 	text-transform: uppercase
@@ -88,10 +91,14 @@ b, strong
 
 //header
 .header
-	position: relative
+	position: sticky
+	top: 0
+	z-index: 20
+	background-color: #fff
 .header-row
 	height: 120px
 	border-bottom: 1px solid rgba(169, 169, 169, 0.25)
+	transition: 1.2s all
 .header-logo
 	display: flex
 	align-items: center
@@ -104,12 +111,20 @@ b, strong
 	color: #656973
 .header-logo:hover
 	text-decoration: none
+
+.header-sticky
+	position: sticky
+	top: 0
+	background-color: #fff
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3)
+	.header-row
+		height: 74px
 //sidebar
 .sidebar-menu
-	position: absolute
+	position: fixed
 	transition: 1s all ease
 	background-color: #fff
-	z-index: 10
+	z-index: 40
 	top: 0
 	bottom: 0
 	left: -100%
@@ -154,7 +169,7 @@ b, strong
 .is-active.sidebar-menu
 	left: 0
 	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4)
-#my-page
+body
 	.hamburger-inner::after, .hamburger-inner::before, .hamburger-inner
 		z-index: -1
 	.my-menu-button.is-active
@@ -189,6 +204,9 @@ b, strong
 	min-height: 300px
 	height: auto
 	padding: 40px 0
+	margin-bottom: 80px
+	+media-breakpoint-down(xs)
+		margin-bottom: 40px
 .trigger-content
 	min-height: 300px
 	position: relative
@@ -215,4 +233,40 @@ b, strong
 	margin: 0
 .trigger__descr
 	color: #a9a9a9
+
+// about
+.about-heading
+	margin-bottom: 2*$gutter
+	text-align: center
+.about__title
+	font-weight: 300
+	span
+		font-weight: 600
+
+.about__title
+	margin-bottom: $gutter
+	font-weight: 600
+	+media-breakpoint-down(sm)
+		
+.about-item
+	margin-bottom: 2*$gutter
+	+media-breakpoint-down(sm)
+		text-align: left
+	p
+		font-size: 13px
+		font-weight: 600
+	.heading--line-right
+		+media-breakpoint-down(sm)
+			border-left: 5px solid $accent
+			border-right: none
+			padding-left: 20px
+.about-item--left
+	text-align: right
+	+media-breakpoint-down(sm)
+		text-align: left
+.about__img
+	margin: auto
+.about-img
+	+media-breakpoint-down(sm)
+		order: 3
 @import "media"
