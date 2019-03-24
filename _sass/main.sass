@@ -24,12 +24,14 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+section
+	padding: 2*$gutter 0
 // типографика
 h1, h2, h3, h4, h5, h6, .h-heading
 	font-family: 'Raleway', sans-serif
 .h-heading
 	line-height: 50px
-.h-heading--line
+.heading--line
 	border-left: 5px solid $accent
 	padding-left: $gutter
 .title-1
@@ -93,6 +95,7 @@ b, strong
 .header-logo
 	display: flex
 	align-items: center
+	padding-left: 10px
 .header-logo__txt
 	margin: 0
 	margin-left: $gutter
@@ -120,6 +123,7 @@ b, strong
 	ul
 		list-style-type: none
 		margin: 0
+		padding: 0
 	+media-breakpoint-down(xs)
 		justify-content: center
 		height: 100vh
@@ -150,10 +154,14 @@ b, strong
 .is-active.sidebar-menu
 	left: 0
 	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4)
-
 #my-page
 	.hamburger-inner::after, .hamburger-inner::before, .hamburger-inner
 		z-index: -1
+	.my-menu-button.is-active
+		+media-breakpoint-down(xs)
+			position: absolute
+			left: 10px
+			z-index: 111
 //main-screen
 .main-screen
 	position: relative
@@ -175,6 +183,36 @@ b, strong
 	right: 0
 	bottom: 140px
 
-
-
+// trigger
+.trigger
+	background-color: $dark
+	min-height: 300px
+	height: auto
+	padding: 40px 0
+.trigger-content
+	min-height: 300px
+	position: relative
+.trigger__img
+	position: absolute
+	left: -40px
+	+media-breakpoint-down(md)
+		left: -150px
+	+media-breakpoint-down(sm)
+		left: -120px
+.trigger-item
+	display: flex
+	flex-direction: column
+	align-items: flex-end
+.trigger__number
+	color: #fff
+	font-weight: 600
+	line-height: 60px
+.trigger__name
+	font-size: 18px
+	text-transform: uppercase
+	color: $accent
+	font-weight: 500
+	margin: 0
+.trigger__descr
+	color: #a9a9a9
 @import "media"
