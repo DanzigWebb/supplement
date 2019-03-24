@@ -231,10 +231,10 @@ body
 	color: #a9a9a9
 
 // about
-.about-heading
+.site-heading
 	margin-bottom: 2*$gutter
 	text-align: center
-.about__title
+.site-heading__title
 	font-weight: 300
 	span
 		font-weight: 600
@@ -265,4 +265,61 @@ body
 .about-img
 	+media-breakpoint-down(sm)
 		order: 3
+
+// carousel
+.results-carousel-item
+	display: flex
+	align-items: center
+.results-img__before
+	z-index: 2
+	position: relative
+.results-img__after
+	position: relative
+	right: 80px
+.results-carousel-imgbox
+	+media-breakpoint-down(xs)
+		display: flex
+		justify-content: flex-end
+.results-img__after
+	+media-breakpoint-down(xs)
+		width: 100%	
+		right: 10px
+.results-img__before
+	+media-breakpoint-down(xs)
+		max-width: 180px
+		position: absolute
+		left: 20px
+
+
+.results-carousel-imgbox
+	display: flex
+	align-items: center
+.results-carousel-numbers
+	display: flex
+	align-items: center
+	justify-content: center
+.results-carousel-descr
+	margin: 20px 0
+	display: flex
+	flex-direction: column
+	align-items: center
+.results-carousel__weight
+	color: $accent
+	display: inline-block
+	margin-right: 40px
+	span
+		display: block
+		color: $h-color
+		font-weight: 800
+		font-size: 44px
+.results-carousel-name__txt
+	font-size: 22px
+	font-weight: 600
+	margin: 0
+.results-carousel-name
+	display: inline-flex
+	flex-direction: column
+	p
+		text-transform: uppercase
+
 @import "media"
