@@ -124,7 +124,7 @@ b, strong
 	position: fixed
 	transition: 1s all ease
 	background-color: #fff
-	z-index: 40
+	z-index: 19
 	top: 0
 	bottom: 0
 	left: -100%
@@ -135,6 +135,7 @@ b, strong
 	display: flex
 	justify-content: flex-end
 	padding: 40px
+	padding-top: 150px
 	ul
 		list-style-type: none
 		margin: 0
@@ -172,11 +173,6 @@ b, strong
 body
 	.hamburger-inner::after, .hamburger-inner::before, .hamburger-inner
 		z-index: -1
-	.my-menu-button.is-active
-		+media-breakpoint-down(xs)
-			position: absolute
-			left: 10px
-			z-index: 111
 //main-screen
 .main-screen
 	position: relative
