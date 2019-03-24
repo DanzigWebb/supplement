@@ -1,0 +1,180 @@
+@import "vars"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	font-family: 'Lato', sans-serif
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+// типографика
+h1, h2, h3, h4, h5, h6, .h-heading
+	font-family: 'Raleway', sans-serif
+.h-heading
+	line-height: 50px
+.h-heading--line
+	border-left: 5px solid $accent
+	padding-left: $gutter
+.title-1
+	font-size: 72px
+	text-transform: uppercase
+	font-weight: 500
+	color: $h-color
+	+media-breakpoint-down(xs)
+		font-size: 46px
+.title-2
+	font-size: 30px
+	text-transform: uppercase
+	color: $h-color
+	+media-breakpoint-down(xs)
+		font-size: 24px
+.title-3
+	font-size: 20px
+	text-transform: uppercase
+	color: $h-color
+	+media-breakpoint-down(xs)
+		font-size: 18px
+p
+	color: $p-color
+	font-weight: 300
+
+.main-btn
+	padding: 10px 20px
+	background-color: $accent
+	border-radius: 20px
+	color: #fff
+	text-transform: uppercase
+	font-weight: 600
+	transition: $anim
+	border: 2px solid $accent
+	&:hover
+		color: $h-color
+		text-decoration: none
+		background-color: #fff
+		
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+//header
+.header
+	position: relative
+.header-row
+	height: 120px
+	border-bottom: 1px solid rgba(169, 169, 169, 0.25)
+.header-logo
+	display: flex
+	align-items: center
+.header-logo__txt
+	margin: 0
+	margin-left: $gutter
+	font-family: 'Raleway', sans-serif
+	font-weight: 600
+	color: #656973
+.header-logo:hover
+	text-decoration: none
+//sidebar
+.sidebar-menu
+	position: absolute
+	transition: 1s all ease
+	background-color: #fff
+	z-index: 10
+	top: 0
+	bottom: 0
+	left: -100%
+	width: 100%
+	max-width: 620px
+	height: 100%
+	min-height: 100vh
+	display: flex
+	justify-content: flex-end
+	padding: 40px
+	ul
+		list-style-type: none
+		margin: 0
+	+media-breakpoint-down(xs)
+		justify-content: center
+		height: 100vh
+
+.header-logo--sidebar
+	flex-direction: column
+	margin-bottom: 2*$gutter
+	.header-logo__txt
+		margin-left: 0
+		margin-top: 5px
+		font-size: 22px
+.sidebar-menu__link
+	color: $gray
+	font-size: 21px
+	font-weight: 600
+	text-align: center
+	transition: $anim
+	text-decoration: none
+	padding: 10px
+	display: block
+	&:hover
+		text-decoration: none
+		color: #fff
+		background-color: $accent
+.sidebar-menu__link--active
+	background-color: $accent
+	color: #fff
+.is-active.sidebar-menu
+	left: 0
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4)
+
+#my-page
+	.hamburger-inner::after, .hamburger-inner::before, .hamburger-inner
+		z-index: -1
+//main-screen
+.main-screen
+	position: relative
+.main-screen-content
+	min-height: 600px
+	padding: 40px 0
+	position: relative
+.main-screen__txt
+	text-transform: lowercase
+	font-weight: 800
+	margin: 0
+.mainscreen-footer
+	p
+		margin: 70px 0
+.main-screen-img
+	margin: 70px 0
+.main-screen__bg
+	position: absolute
+	right: 0
+	bottom: 140px
+
+
+
+@import "media"
